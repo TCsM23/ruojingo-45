@@ -1,0 +1,91 @@
+{
+  "unitId": 1,
+  "title": "Terminology and OSI",
+  "description": "The 7 OSI layers, where devices work, and what IP/MAC addresses and switches do.",
+  "exercises": [
+    {
+      "id": "u1_q1",
+      "type": "MultipleChoice",
+      "prompt": "Which list shows the OSI layers in order from Layer 1 to Layer 7?",
+      "options": [
+        "Physical, Data Link, Network, Transport, Session, Presentation, Application",
+        "Physical, Network, Data Link, Transport, Session, Presentation, Application",
+        "Application, Presentation, Session, Transport, Network, Data Link, Physical",
+        "Physical, Data Link, Network, Session, Transport, Presentation, Application"
+      ],
+      "correctIndex": 0,
+      "explanation": "Layer 1 Physical, 2 Data Link, 3 Network, 4 Transport, 5 Session, 6 Presentation, 7 Application. (The third option is the right list, but from 7 down to 1.)"
+    },
+    {
+      "id": "u1_q2",
+      "type": "MultipleChoice",
+      "prompt": "Which OSI layer is Layer 3?",
+      "options": ["Data Link", "Network", "Transport", "Session"],
+      "correctIndex": 1,
+      "explanation": "Layer 3 is the Network layer. It handles logical (IP) addressing and routing between networks."
+    },
+    {
+      "id": "u1_q3",
+      "type": "NumericInput",
+      "prompt": "What is the layer number of the Transport layer?",
+      "hint": "Type a number from 1 to 7",
+      "acceptedAnswers": ["4"],
+      "explanation": "Transport is Layer 4 (for example TCP and UDP)."
+    },
+    {
+      "id": "u1_q4",
+      "type": "DeviceMatch",
+      "prompt": "Match each device to the OSI layer where it mainly works.",
+      "pairLeft": ["Hub", "Switch", "Router"],
+      "pairRight": ["Layer 1 - Physical", "Layer 2 - Data Link", "Layer 3 - Network"],
+      "explanation": "A hub repeats bits (L1), a switch forwards frames by MAC address (L2), a router forwards packets by IP address (L3)."
+    },
+    {
+      "id": "u1_q5",
+      "type": "MultipleChoice",
+      "prompt": "What is an IP address?",
+      "options": [
+        "A logical Layer 3 address that identifies a host and is used to route packets between networks",
+        "A permanent hardware address burned into a network card",
+        "The cable that connects a PC to a switch",
+        "A number that identifies an application on a host"
+      ],
+      "correctIndex": 0,
+      "explanation": "An IP address is a logical (Layer 3) address. Routers use it to forward packets between networks. The burned-in hardware address is the MAC address."
+    },
+    {
+      "id": "u1_q6",
+      "type": "MultipleChoice",
+      "prompt": "What is a MAC address?",
+      "options": [
+        "A 32-bit logical address given out by a DHCP server",
+        "A 48-bit physical (hardware) address of a network interface, used at Layer 2",
+        "The name of a website, such as example.com",
+        "A Layer 3 address that routers use to choose a path"
+      ],
+      "correctIndex": 1,
+      "explanation": "A MAC address is a 48-bit hardware address (e.g. 00:1A:2B:3C:4D:5E) used by Layer 2 devices such as switches."
+    },
+    {
+      "id": "u1_q7",
+      "type": "MultipleChoice",
+      "prompt": "What does a switch do?",
+      "options": [
+        "Routes packets between different networks using IP addresses",
+        "Repeats every incoming signal out of all its ports",
+        "Forwards frames only to the port of the destination device, using MAC addresses",
+        "Translates domain names into IP addresses"
+      ],
+      "correctIndex": 2,
+      "explanation": "A switch learns which MAC address is on which port and forwards each frame only where it needs to go. Routing between networks is a router's job; repeating to all ports is what a hub does."
+    },
+    {
+      "id": "u1_q8",
+      "type": "DeviceMatch",
+      "prompt": "Match each layer number to its name.",
+      "pairLeft": ["Layer 5", "Layer 6", "Layer 7"],
+      "pairRight": ["Session", "Presentation", "Application"],
+      "explanation": "Layer 5 Session, Layer 6 Presentation, Layer 7 Application."
+    }
+  ]
+}

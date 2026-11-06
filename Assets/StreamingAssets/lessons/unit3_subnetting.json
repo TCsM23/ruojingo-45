@@ -1,0 +1,71 @@
+{
+  "unitId": 3,
+  "title": "Subnetting",
+  "description": "Prefixes, subnet masks and host counts. Usable hosts = 2^(32 - prefix) - 2.",
+  "exercises": [
+    {
+      "id": "u3_q1",
+      "type": "NumericInput",
+      "prompt": "What is the subnet mask for /26? Write it in dotted decimal.",
+      "hint": "Example format: 255.255.255.0",
+      "acceptedAnswers": ["255.255.255.192"],
+      "explanation": "/26 = 26 one-bits = 255.255.255.192."
+    },
+    {
+      "id": "u3_q2",
+      "type": "NumericInput",
+      "prompt": "How many usable hosts are in a /27 network?",
+      "hint": "Type a number",
+      "acceptedAnswers": ["30"],
+      "explanation": "2^(32 - 27) - 2 = 2^5 - 2 = 32 - 2 = 30 usable hosts."
+    },
+    {
+      "id": "u3_q3",
+      "type": "MultipleChoice",
+      "prompt": "Which subnet mask is /25?",
+      "options": ["255.255.255.0", "255.255.255.128", "255.255.255.192", "255.255.255.224"],
+      "correctIndex": 1,
+      "explanation": "/25 = 255.255.255.128, which gives 2^7 - 2 = 126 usable hosts."
+    },
+    {
+      "id": "u3_q4",
+      "type": "NumericInput",
+      "prompt": "How many usable hosts does a /24 network have?",
+      "hint": "Type a number",
+      "acceptedAnswers": ["254"],
+      "explanation": "2^(32 - 24) - 2 = 256 - 2 = 254. The network and broadcast addresses can't be given to hosts."
+    },
+    {
+      "id": "u3_q5",
+      "type": "MultipleChoice",
+      "prompt": "You need at least 50 usable hosts in one subnet. Which is the smallest subnet that fits?",
+      "options": ["/24", "/25", "/26", "/27"],
+      "correctIndex": 2,
+      "explanation": "/26 gives 62 hosts (enough). /27 gives only 30. /25 and /24 also fit but waste more addresses."
+    },
+    {
+      "id": "u3_q6",
+      "type": "MultipleChoice",
+      "prompt": "Each subnet needs at least 25 hosts. Which mask fits while wasting the fewest addresses?",
+      "options": ["255.255.255.192", "255.255.255.224", "255.255.255.240", "255.255.255.248"],
+      "correctIndex": 1,
+      "explanation": "255.255.255.224 is /27 = 30 hosts. /28 (255.255.255.240) only gives 14."
+    },
+    {
+      "id": "u3_q7",
+      "type": "NumericInput",
+      "prompt": "A /24 network is divided into /26 subnets. How many subnets do you get?",
+      "hint": "Type a number",
+      "acceptedAnswers": ["4"],
+      "explanation": "You borrow 26 - 24 = 2 bits, so 2^2 = 4 subnets (each with 62 hosts)."
+    },
+    {
+      "id": "u3_q8",
+      "type": "DeviceMatch",
+      "prompt": "Match each prefix to its number of usable hosts.",
+      "pairLeft": ["/25", "/26", "/28"],
+      "pairRight": ["126 hosts", "62 hosts", "14 hosts"],
+      "explanation": "/25 = 2^7 - 2 = 126, /26 = 2^6 - 2 = 62, /28 = 2^4 - 2 = 14."
+    }
+  ]
+}

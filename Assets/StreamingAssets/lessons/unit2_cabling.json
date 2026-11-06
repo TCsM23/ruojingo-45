@@ -1,0 +1,69 @@
+{
+  "unitId": 2,
+  "title": "Cabling",
+  "description": "T568A and T568B pin orders, and when to use straight-through or crossover cables.",
+  "exercises": [
+    {
+      "id": "u2_q1",
+      "type": "WireOrder",
+      "prompt": "Tap the wires in T568B order, from pin 1 to pin 8.",
+      "correctOrder": ["white/orange", "orange", "white/green", "blue", "white/blue", "green", "white/brown", "brown"],
+      "explanation": "T568B: white/orange, orange, white/green, blue, white/blue, green, white/brown, brown."
+    },
+    {
+      "id": "u2_q2",
+      "type": "WireOrder",
+      "prompt": "Tap the wires in T568A order, from pin 1 to pin 8.",
+      "correctOrder": ["white/green", "green", "white/orange", "blue", "white/blue", "orange", "white/brown", "brown"],
+      "explanation": "T568A: white/green, green, white/orange, blue, white/blue, orange, white/brown, brown. It is T568B with the orange and green pairs swapped."
+    },
+    {
+      "id": "u2_q3",
+      "type": "CableTypeChoice",
+      "prompt": "A cable is terminated like this. What type of cable is it?",
+      "endA": "T568B",
+      "endB": "T568B",
+      "explanation": "The same standard on both ends makes a straight-through cable."
+    },
+    {
+      "id": "u2_q4",
+      "type": "CableTypeChoice",
+      "prompt": "A cable is terminated like this. What type of cable is it?",
+      "endA": "T568A",
+      "endB": "T568B",
+      "explanation": "T568A on one end and T568B on the other makes a crossover cable."
+    },
+    {
+      "id": "u2_q5",
+      "type": "MultipleChoice",
+      "prompt": "Which cable connects a PC to a switch (unlike devices)?",
+      "options": ["Straight-through", "Crossover", "Rollover (console)"],
+      "correctIndex": 0,
+      "explanation": "Unlike devices (PC to switch, router to switch) use a straight-through cable. A rollover cable is for a device's console port."
+    },
+    {
+      "id": "u2_q6",
+      "type": "MultipleChoice",
+      "prompt": "Which cable connects a PC directly to another PC (like devices)?",
+      "options": ["Straight-through", "Crossover", "Rollover (console)"],
+      "correctIndex": 1,
+      "explanation": "Like devices (PC to PC, switch to switch) use a crossover cable: T568A on one end, T568B on the other. Many modern ports have Auto-MDIX and adjust automatically, but the exam rule is still crossover."
+    },
+    {
+      "id": "u2_q7",
+      "type": "MultipleChoice",
+      "prompt": "In the T568B standard, which wire is on pin 1?",
+      "options": ["White/green", "White/orange", "Orange", "Blue"],
+      "correctIndex": 1,
+      "explanation": "T568B starts with white/orange on pin 1. T568A starts with white/green."
+    },
+    {
+      "id": "u2_q8",
+      "type": "DeviceMatch",
+      "prompt": "Match each connection to the cable it needs.",
+      "pairLeft": ["PC to Switch", "PC to PC", "Switch to Switch", "Router to Switch"],
+      "pairRight": ["Straight-through", "Crossover", "Crossover", "Straight-through"],
+      "explanation": "Unlike devices use straight-through; like devices use crossover."
+    }
+  ]
+}
